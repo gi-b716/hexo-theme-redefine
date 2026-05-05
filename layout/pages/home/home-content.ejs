@@ -1,6 +1,7 @@
 <div class="home-content-container">
+    <% const visiblePosts = page.posts.filter(post => !post.hide && !post.archive); %>
     <ul class="home-article-list">
-        <% page.posts.forEach(post => { %>
+        <% visiblePosts.forEach(post => { %>
             <li class="home-article-item">
 
                 <% if (post.sticky) { %>
