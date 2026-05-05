@@ -1,3 +1,4 @@
+<% const visiblePostCount = site.posts.filter(post => !post.hide).length; %>
 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="<%- url_for(config.tag_dir) %>">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold"><%= site.tags.length %></div>
@@ -8,7 +9,7 @@
         <div class="label text-third-text-color text-sm"><%- __('categories') %></div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="<%- url_for(config.archive_dir) %>">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold"><%= site.posts.filter(post => !post.hide).length %></div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold"><%= visiblePostCount %></div>
         <div class="label text-third-text-color text-sm"><%- __('posts') %></div>
     </a>
 </div>
